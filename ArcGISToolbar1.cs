@@ -75,6 +75,7 @@ namespace ArcMapClassLibrary2
             AddItem("ArcMapClassLibrary2.LoadDataCommand1");
             AddItem("ArcMapClassLibrary2.ViewCommand");
             AddItem("ArcMapClassLibrary2.EditTool1");
+            AddItem("ArcMapClassLibrary2.SelectTool");
         }
 
         public override string Caption
