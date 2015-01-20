@@ -52,11 +52,6 @@
     <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -86,16 +81,6 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.GeoSurvey, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ESRI.ArcGIS.NetworkAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ESRI.ArcGIS.NetworkAnalystUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>False</Private>
@@ -175,6 +160,24 @@
     <EmbeddedResource Include="EditTool1.cur" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="esri3DAnalyst">
+      <Guid>{639FE90A-CC9A-48C6-AC1D-105FE50915B5}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="esriAnimation">
+      <Guid>{643D491A-D5BD-4788-B610-A0F53CBA0940}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="esriCarto">
       <Guid>{45AC68FF-DEFF-4884-B3A9-7D882EDCAEF1}</Guid>
       <VersionMajor>10</VersionMajor>
@@ -193,6 +196,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="esriControls">
+      <Guid>{033364CA-47F9-4251-98A5-C88CD8D3C808}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="esriDataSourcesFile">
       <Guid>{1CE6AC65-43F5-4529-8FC0-D7ED298E4F1A}</Guid>
       <VersionMajor>10</VersionMajor>
@@ -204,6 +216,15 @@
     </COMReference>
     <COMReference Include="esriDataSourcesGDB">
       <Guid>{4A037613-879A-484D-AF82-0802947C627B}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="esriDataSourcesNetCDF">
+      <Guid>{28ED84CD-FB06-41A0-9A55-E196441D169A}</Guid>
       <VersionMajor>10</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
@@ -283,8 +304,53 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="esriGeoprocessing">
+      <Guid>{C031A050-82C6-4F8F-8836-5692631CFFE6}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="esriGISClient">
       <Guid>{746F6817-89BB-4490-9829-83CA25FD505A}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="esriGlobeCore">
+      <Guid>{00B329B5-265E-11D6-B2B4-00508BCDDE28}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="esriMaplex">
+      <Guid>{AEE93E77-D204-4E9F-8CF8-5C90EC49F424}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="esriMaplexUI">
+      <Guid>{BC6195CD-A22A-4E91-2CF4-FFABECFF8A24}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="esriNetworkAnalyst">
+      <Guid>{9B4F73F7-90C0-11D5-A6C3-0008C7DF88AB}</Guid>
       <VersionMajor>10</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>

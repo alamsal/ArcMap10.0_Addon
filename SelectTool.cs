@@ -1,15 +1,17 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.ArcMapUI;
-using System.Windows.Forms;
+using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.esriSystem;
+
 
 namespace ArcMapClassLibrary2
 {
@@ -173,6 +175,8 @@ namespace ArcMapClassLibrary2
 
             map.SelectByShape(geom, null, false);
             activeView.PartialRefresh(esriViewDrawPhase.esriViewGeoSelection, null, activeView.Extent);
+            
+            activeView.PartialRefresh(esriViewDrawPhase.esriViewGeoSelection, null, activeView.Extent);
 
         }
 
@@ -187,6 +191,11 @@ namespace ArcMapClassLibrary2
         }
         #endregion
 
+
        
+
+
+
+
     }
 }

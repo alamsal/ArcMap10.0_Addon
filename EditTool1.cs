@@ -128,16 +128,15 @@ namespace ArcMapClassLibrary2
 
         public override void OnMouseDown(int Button, int Shift, int X, int Y)
         {
-            
+
             //Now editing starts
 
             //Access Map layer
             IMxDocument doc = m_application.Document as IMxDocument;
-            IMap map = doc.FocusMap;
-            ILayer mapLayer = map.get_Layer(0);
+            
 
-
-   
+            
+            
             //create geometery
 
             ESRI.ArcGIS.Display.IScreenDisplay screenDisplay = doc.ActiveView.ScreenDisplay;
@@ -150,71 +149,21 @@ namespace ArcMapClassLibrary2
             ESRI.ArcGIS.Display.ISimpleFillSymbol simpleFillSymbol = new ESRI.ArcGIS.Display.SimpleFillSymbolClass();
             simpleFillSymbol.Color = color;
 
-
-            
-            //screenDisplay.FinishDrawing();
-
-
-
-
-            
-            //Access workspace
-            const string path = "D:/Ashis_Work/TCCDefects/SampleDatasets/NewShp";
-            const string fileGDBName = "sample.gdb";
-            const string fileGDBAddress = path + "/" + fileGDBName;
-            const string featureDatasetname = "polygonFeatureClasses";
-            const string featureClassname = "MytestPolygons";
-
-            Type factoryType = Type.GetTypeFromProgID("esriDataSourcesGDB.FileGDBWorkspaceFactory");
-            IWorkspaceFactory workspaceFactory = (IWorkspaceFactory)Activator.CreateInstance(factoryType);
-           
-
-            //Create feature dataset
-            IFeatureWorkspace featureWorkspace = workspaceFactory.OpenFromFile(fileGDBAddress, m_application.hWnd) as IFeatureWorkspace;
-
-            IFeatureClass featureClass = featureWorkspace.OpenFeatureClass(featureClassname);
-            IWorkspaceEdit workspaceEdit = (IWorkspaceEdit)featureWorkspace;
-            
-            workspaceEdit.StartEditing(true);
-            workspaceEdit.StartEditOperation();
-
-
-
+            //Draw geometry
             ESRI.ArcGIS.Display.ISymbol symbol = simpleFillSymbol as ESRI.ArcGIS.Display.ISymbol; // Dynamic Cast
             ESRI.ArcGIS.Display.IRubberBand rubberBand = new ESRI.ArcGIS.Display.RubberPolygonClass();
             ESRI.ArcGIS.Geometry.IGeometry geometry = rubberBand.TrackNew(screenDisplay, symbol);
             screenDisplay.SetSymbol(symbol);
             screenDisplay.DrawPolygon(geometry);
             screenDisplay.FinishDrawing();
-
-            IFeature feature = featureClass.CreateFeature();
-            feature.Shape = geometry;
-            feature.set_Value(featureClass.FindField("Name_Test"),"Whats up?");
-            feature.Store();
+            
+            
 
 
             Form1 fm = new Form1();
+            fm.ArcMapApplication = m_application;
+            fm.PolygonGeometry = geometry;
             fm.Show();
-
-
-        
-            
-
-            workspaceEdit.StopEditOperation();
-            workspaceEdit.StopEditing(true);
-
-            map.RecalcFullExtent();
-            doc.ActiveView.Refresh();
-
-
-
-
-
-
-
-
-
-
 
         }
 
