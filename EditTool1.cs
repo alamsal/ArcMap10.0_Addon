@@ -124,6 +124,11 @@ namespace ArcMapClassLibrary2
         {
             //Create GDB addinto ArcMap
             StartUp();
+
+            //Create tables inside GDB
+            CreateTables createTable = new CreateTables();
+            createTable.ArcMapApplication = m_application;
+            createTable.GenerateTableSchema();
         }
 
         public override void OnMouseDown(int Button, int Shift, int X, int Y)

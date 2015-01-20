@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArcGISToolbar1.cs" />
+    <Compile Include="CreateTables.cs" />
     <Compile Include="EditTool1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -85,10 +85,7 @@ namespace ArcMapClassLibrary2
 
                 map.RecalcFullExtent();
                 doc.ActiveView.Refresh();
-
                 
-
-
 
                 MessageBox.Show("saved");
                 this.Close();
@@ -107,6 +104,8 @@ namespace ArcMapClassLibrary2
         {
 
         }
+
+
 
 
     }
