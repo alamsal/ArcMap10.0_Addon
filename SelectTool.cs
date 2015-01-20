@@ -74,9 +74,7 @@ namespace ArcMapClassLibrary2
         #endregion
 
         private IApplication m_application;
-        //private IHookHelper m_hookHelper;
-        private System.Windows.Forms.Cursor m_CursorMove;
-
+        
         public SelectTool()
         {
             //

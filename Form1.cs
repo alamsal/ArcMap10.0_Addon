@@ -50,7 +50,6 @@ namespace ArcMapClassLibrary2
                 const string path = "D:/Ashis_Work/TCCDefects/SampleDatasets/NewShp";
                 const string fileGDBName = "sample.gdb";
                 const string fileGDBAddress = path + "/" + fileGDBName;
-                const string featureDatasetname = "polygonFeatureClasses";
                 const string featureClassname = "MytestPolygons";
 
                 Type factoryType = Type.GetTypeFromProgID("esriDataSourcesGDB.FileGDBWorkspaceFactory");
@@ -86,6 +85,20 @@ namespace ArcMapClassLibrary2
                 map.RecalcFullExtent();
                 doc.ActiveView.Refresh();
                 
+                //Store info in datatable
+                AddAttributesToTable addAttributesToTable = new AddAttributesToTable();
+                
+                ITable table = featureWorkspace.OpenTable("Source");
+                
+                List<string> attrValues= new List<string>();
+                attrValues.Add("dd");
+                attrValues.Add(textBox2.Text);
+                
+                var fields = new List<string> { "Source", "Defect_FID" };
+
+                addAttributesToTable.StoreAttributesOnTableRow(table, fields, attrValues);
+
+
 
                 MessageBox.Show("saved");
                 this.Close();
