@@ -81,14 +81,14 @@ namespace ArcMapClassLibrary2
             base.m_category = "MyTestViewer"; //localizable text 
             base.m_caption = "Edit toolbar";  //localizable text 
             base.m_message = "toolbar";  //localizable text
-            base.m_toolTip = "toolbar";  //localizable text
+            base.m_toolTip = "Edit toolbar";  //localizable text
             base.m_name = "Editdata_Tool";   //unique id, non-localizable (e.g. "MyCategory_ArcMapTool")
             try
             {
                 //
                 // TODO: change resource name if necessary
                 //
-                string bitmapResourceName = GetType().Name + ".bmp";
+                string bitmapResourceName = GetType().Name + ".png";
                 base.m_bitmap = new Bitmap(GetType(), bitmapResourceName);
                 base.m_cursor = new System.Windows.Forms.Cursor(GetType(), GetType().Name + ".cur");
             }

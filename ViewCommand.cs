@@ -75,7 +75,7 @@ namespace ArcMapClassLibrary2
             base.m_category = "MyTestViewer"; //localizable text
             base.m_caption = "Viewer";  //localizable text
             base.m_message = "Viewer";  //localizable text 
-            base.m_toolTip = "";  //localizable text 
+            base.m_toolTip = "view";  //localizable text 
             base.m_name = "Viwer_command_btn";   //unique id, non-localizable (e.g. "MyCategory_ArcMapCommand")
 
             try

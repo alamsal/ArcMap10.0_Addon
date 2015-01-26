@@ -72,10 +72,16 @@ namespace ArcMapClassLibrary2
             //BeginGroup(); //Separator
             //AddItem("{FBF8C3FB-0480-11D2-8D21-080009EE4E51}", 1); //undo command
             //AddItem(new Guid("FBF8C3FB-0480-11D2-8D21-080009EE4E51"), 2); //redo command
+            BeginGroup();
             AddItem("ArcMapClassLibrary2.LoadDataCommand1");
+            BeginGroup();
             AddItem("ArcMapClassLibrary2.ViewCommand");
+            BeginGroup();
             AddItem("ArcMapClassLibrary2.EditTool1");
+            BeginGroup();
             AddItem("ArcMapClassLibrary2.SelectTool");
+            BeginGroup();
+            AddItem("ArcMapClassLibrary2.QueryGDB");
         }
 
         public override string Caption

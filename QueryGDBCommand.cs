@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using System.Windows.Interop;
 using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.ADF.CATIDs;
 using ESRI.ArcGIS.Framework;
@@ -10,12 +10,12 @@ using ESRI.ArcGIS.ArcMapUI;
 namespace ArcMapClassLibrary2
 {
     /// <summary>
-    /// Summary description for LoadDataCommand1.
+    /// Summary description for QueryGDB.
     /// </summary>
-    [Guid("022364fa-b5a3-4e04-ba33-246e19e509df")]
+    [Guid("04a31b07-59f8-494b-9692-0a9a5c856e72")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ProgId("ArcMapClassLibrary2.LoadDataCommand1")]
-    public sealed class LoadDataCommand1 : BaseCommand
+    [ProgId("ArcMapClassLibrary2.QueryGDB")]
+    public sealed class QueryGDBCommand : BaseCommand
     {
         #region COM Registration Function(s)
         [ComRegisterFunction()]
@@ -68,24 +68,26 @@ namespace ArcMapClassLibrary2
         #endregion
 
         private IApplication m_application;
-        public LoadDataCommand1()
+        public QueryGDBCommand()
         {
             //
             // TODO: Define values for the public properties
             //
             base.m_category = "MyTestViewer"; //localizable text
-            base.m_caption = "test ";  //localizable text
-            base.m_message = "test ";  //localizable text 
-            base.m_toolTip = "load";  //localizable text 
-            base.m_name = "My_tool_Unique_Tool";   //unique id, non-localizable (e.g. "MyCategory_ArcMapCommand")
+            base.m_caption = "QueryGDB";  //localizable text
+            base.m_message = "QueryGDB";  //localizable text 
+            base.m_toolTip = "QueryGDB";  //localizable text 
+            base.m_name = "QueryGDB";   //unique id, non-localizable (e.g. "MyCategory_ArcMapCommand")
 
             try
             {
                 //
                 // TODO: change bitmap name if necessary
                 //
-                string bitmapResourceName = GetType().Name + ".bmp";
+                string bitmapResourceName = GetType().Name + ".png";
                 base.m_bitmap = new Bitmap(GetType(), bitmapResourceName);
+                
+                
             }
             catch (Exception ex)
             {
@@ -120,19 +122,42 @@ namespace ArcMapClassLibrary2
         /// </summary>
         public override void OnClick()
         {
-            // TODO: Add LoadDataCommand1.OnClick implementation
-
-            Form2 fm = new Form2();
-            fm.MapApplication = m_application;
-            
+            //Wpf example to make model popup
+            /*
+            QueryForm qs = new QueryForm();
             ArcMapWrapper wrapper= new ArcMapWrapper(m_application);
-            fm.ShowInTaskbar = false;
-            //fm.Show(wrapper);
-            fm.ShowDialog();
+
+            var helper = new WindowInteropHelper(qs);
+            helper.Owner = wrapper.Handle;
+            qs.ShowInTaskbar = false;
+            qs.ShowDialog();
+            */
+
+            
+            //Wpf example to make wpf form
+            /*
+            QueryForm qs = new QueryForm();
+            ArcMapWrapper wrapper = new ArcMapWrapper(m_application);
+
+            var helper = new WindowInteropHelper(qs);
+            helper.Owner = wrapper.Handle;
+            qs.ShowInTaskbar = false;
+            qs.Show();
+            */
+
+            Form3 fm3 = new Form3();
+            ArcMapWrapper wrapper = new ArcMapWrapper(m_application);
+            fm3.ShowInTaskbar = false;
+            fm3.Show(wrapper);
+            
+            
+
+
+
+
+
         }
 
         #endregion
-
-        
     }
 }
