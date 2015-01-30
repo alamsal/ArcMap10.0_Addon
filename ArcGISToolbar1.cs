@@ -83,7 +83,6 @@ namespace ArcMapClassLibrary2
             BeginGroup();
             AddItem("ArcMapClassLibrary2.QueryGDB");
             BeginGroup();
-            //AddItem("ArcMapClassLibrary2.MyCommboBoxCommand");
             AddItem("ArcMapClassLibrary2.ComboCommandIComboBox");
         }
 

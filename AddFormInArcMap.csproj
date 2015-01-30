@@ -147,7 +147,6 @@
     </Compile>
     <Compile Include="GDBConnectionHandler.cs" />
     <Compile Include="LoadDataCommand1.cs" />
-    <Compile Include="MyCommboBoxCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryForm.xaml.cs">
       <DependentUpon>QueryForm.xaml</DependentUpon>
@@ -454,9 +453,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MyCommboBoxCommand.bmp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ComboCommandIComboBox.bmp" />
