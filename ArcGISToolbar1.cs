@@ -82,6 +82,9 @@ namespace ArcMapClassLibrary2
             AddItem("ArcMapClassLibrary2.SelectTool");
             BeginGroup();
             AddItem("ArcMapClassLibrary2.QueryGDB");
+            BeginGroup();
+            //AddItem("ArcMapClassLibrary2.MyCommboBoxCommand");
+            AddItem("ArcMapClassLibrary2.ComboCommandIComboBox");
         }
 
         public override string Caption
@@ -89,7 +92,7 @@ namespace ArcMapClassLibrary2
             get
             {
                 //TODO: Replace bar caption
-                return "1LoadMapToolBar";
+                return "1MapToolBar";
             }
         }
         public override string Name
