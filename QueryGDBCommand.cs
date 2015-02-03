@@ -145,10 +145,11 @@ namespace ArcMapClassLibrary2
             qs.Show();
             */
 
-            Form3 fm3 = new Form3();
+            Form4 fm4 = new Form4();
             ArcMapWrapper wrapper = new ArcMapWrapper(m_application);
-            fm3.ShowInTaskbar = false;
-            fm3.Show(wrapper);
+            fm4.ArcMapApplication = m_application;
+            fm4.ShowInTaskbar = false;
+            fm4.Show(wrapper);
             
             
 

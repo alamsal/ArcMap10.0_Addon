@@ -84,6 +84,8 @@ namespace ArcMapClassLibrary2
             AddItem("ArcMapClassLibrary2.QueryGDB");
             BeginGroup();
             AddItem("ArcMapClassLibrary2.ComboCommandIComboBox");
+            BeginGroup();
+            AddItem("ArcMapClassLibrary2.ComboCommandITool");
         }
 
         public override string Caption
